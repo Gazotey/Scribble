@@ -1,6 +1,7 @@
 # Scribble
 ##### A visual tool for developing Create Your Own Adventure Games (CYOAG)
-This tool can be used to write text-based games where the choices of the players affect the flow of the story. It's useful for visualizing the flow of your story.
+This tool can be used to write text-based games where the choices of the players affect the flow of the story. It's useful for visualizing the flow of your story.  
+There currently is no export or build functionality of any kind. I do plan to implement an export to JSON feature in the future.  
 
 For every prompt of text, it shows a card. Cards have connections with other cards, which represent the choices the user can choose from.  
 
