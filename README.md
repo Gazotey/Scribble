@@ -7,7 +7,9 @@ For every prompt of text, it shows a card. Cards have connections with other car
 
 Development on Scribble has slowed down due to a lack of time, so I'm making it available for general use.  
 
-![](img/screenshot.jpg)
+<table><tr><td>
+<img src="img/screenshot.jpg">
+</td></tr></table>
 
 ### Features available
 ##### Editing text
