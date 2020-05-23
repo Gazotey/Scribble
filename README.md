@@ -11,31 +11,31 @@ Development on Scribble has slowed down due to a lack of time, so I'm making it 
 ### Features available
 ##### Editing text
 <table><tr><td>
-![](img/editing_cards.gif)
+<img src="img/editing_cards.gif">
 </td></tr></table>
 
 ##### Adding choices for the user
 <table><tr><td>
-![](img/add_user_choice.gif)
+<img src="img/add_user_choice.gif">
 </td></tr></table>
 
 <table><tr><td>
-![](img/add_user_choice_2.gif)
+<img src="img/add_user_choice_2.gif">
 </td></tr></table>
 
 ##### Setting card types
 <table><tr><td>
-![](img/card_types.gif)
+<img src="img/card_types.gif">
 </td></tr></table>
 
 ##### Connecting cards
 <table><tr><td>
-![](img/connecting_cards.gif)
+<img src="img/connecting_cards.gif">
 </td></tr></table>
 
 ##### Previewing the game
 <table><tr><td>
-![](img/preview_mode.gif)
+<img src="img/preview_mode.gif">
 </td></tr></table>
 
 ### Missing essential features
