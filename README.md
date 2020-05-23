@@ -7,25 +7,39 @@ For every prompt of text, it shows a card. Cards have connections with other car
 
 Development on Scribble has slowed down due to a lack of time, so I'm making it available for general use.  
 
-<img src="img/screenshot.jpg" style="border:1px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/screenshot.jpg">
+</td></tr></table>
 
 ### Features available
 ##### Editing text
-<img src="img/editing_cards.gif" style="border:1px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/editing_cards.gif">
+</td></tr></table>
 
 ##### Adding choices for the user
-<img src="img/add_user_choice.gif" style="border:2px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/add_user_choice.gif">
+</td></tr></table>
 
-<img src="img/add_user_choice_2.gif" style="border:2px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/add_user_choice_2.gif">
+</td></tr></table>
 
 ##### Setting card types
-<img src="img/card_types.gif" style="border:2px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/card_types.gif">
+</td></tr></table>
 
 ##### Connecting cards
-<img src="img/connecting_cards.gif" style="border:2px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/connecting_cards.gif">
+</td></tr></table>
 
 ##### Previewing the game
-<img src="img/preview_mode.gif" style="border:2px solid black">
+<table style="border:0px"><tr><td style="border:2px solid black">
+<img src="img/preview_mode.gif">
+</td></tr></table>
 
 ### Missing essential features
 I plan to implement at least these features at some point.
