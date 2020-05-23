@@ -6,7 +6,9 @@ There currently is no export or build functionality of any kind. I do plan to im
 For every prompt of text, it shows a card. Cards have connections with other cards, which represent the choices the user can choose from.  
 
 Development on Scribble has slowed down due to a lack of time, so I'm making it available for general use.  
-Improvements are welcomed
+All contributions are welcome!
+
+[Demo](https://gazotey.github.io/Scribble/) (master branch)
 
 <table><tr><td>
 <img src="img/screenshot.jpg">
