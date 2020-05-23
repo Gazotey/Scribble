@@ -28,13 +28,6 @@ var StoryCard = function() {
         }
     }
 
-    this.MoveToLocation = function(posX, posY) {
-        var diffX = posX - this.m_Position.x;
-        var diffY = posY - this.m_Position.y;
-
-        this.MoveByOffset(diffX, diffY);
-    }
-
     // Add slave card
     this.AddUserChoice = function(a_IDOfExistingCard) {
         var IDOfStoryCard;
@@ -311,8 +304,6 @@ var StoryCard = function() {
 
 var MakerApp = function() {
     // User variables
-    //this.UserName                           = getCookie("sess").split(":")[0];
-    this.Project_ID                         = -1;
     this.MaxDelayForDoubleClick             = 500;                          // Max delay in microseconds between two clicks for them to count as a double-click
 
     // Member variables
@@ -323,7 +314,6 @@ var MakerApp = function() {
     this.m_RightMouseIsDragging             = false;                        // Is user right-click-dragging their mouse?
     this.m_LeftMouseIsDragging              = false;                        // Is user left-click-dragging their mouse?
     this.m_CurrentMouseWorldPosition        = { x: -1, y: -1 };
-    this.m_MousePoseAtStartOfClick          = { x: 0, y: 0 };               // Mouse position at the start of a left-click or right-click.
     this.m_MousePoseAtStartOfPotentialDrag  = { x: 0, y: 0 };               // Mouse position at the start of a potential drag
     this.m_MousePoseAtStartOfDragPersistant = { x: 0, y: 0 };               // Mouse position at the start of a left-click or right-click drag.
                                                                             //     This one is not updated every event tick, but persists until the MouseUp event triggers
@@ -332,13 +322,11 @@ var MakerApp = function() {
     this.m_TickRate                         = 60;                           // Amount of ticks per second
     this.m_WorldOffset                      = { x: 0, y: 0 };               // Offset of world due to "camera" moving
     this.m_WorldZoom                        = 1;                            // Current canvas zoom
-    this.m_CharCountThresholdPerCardLine    = 40;                           // Max characters per line that fit on a card
     this.m_CardIDCounter                    = 5;                            // Start on five so I remember the ID's don't match the array indexes
     this.m_IsConnectModeActive              = false;                        // Has a card been chosen to be connected to another card by the user?
     this.m_IsDisconnectModeActive           = false;                        // Has a card been chosen to be disconnected from another card by the user?
     this.m_FirstCardSelectedForConnectID    = -1;                           // Card chosen by user (master) to be connected to another card (slave).
     this.m_FirstCardSelectedForDisconnectID = -1;                           // Card chosen by user (master) to be disconnected from another card (slave).
-    this.m_CurrentBuildID                   = -1;                           // ID received by buildserver to identify build
     this.m_TextEditorIsOpen                 = false;                        // Keeps track of the open / closed state of the text-editor (toggles whether 'delete' button removes selected card)
     this.m_MaxLinesOnStoryCardPreview       = 21;                           // The max amount of preview lines that the Story Cards can hold on-canvas
     this.m_CardTypes                        = {                             // All types of cards available
@@ -819,10 +807,6 @@ var MakerApp = function() {
                 GameApp.Init(config);
             }
         });
-    }
-
-    this.BuildGame = function() {
-        top.postMessage(JSON.stringify({message: 'build_now', data: App.BuildConfiguration(false)}), '*');
     }
 
     this.InitEventListeners = function() {
