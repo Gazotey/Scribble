@@ -56,8 +56,6 @@ var StoryCard = function() {
 
         var newUserChoice       = new UserChoice("Placeholder", IDOfStoryCard);
         this.m_UserChoices.push(newUserChoice);
-
-        //App.UpdateTextEditorConfig();
     }
 
     this.RemoveUserChoice = function(a_IDOfExistingCard) {
@@ -307,7 +305,8 @@ var MakerApp = function() {
     this.MaxDelayForDoubleClick             = 500;                          // Max delay in microseconds between two clicks for them to count as a double-click
 
     // Member variables
-    this.m_Context                          = document.getElementById('canvas-editor').getContext('2d');    // 2d canvas context
+    this.m_Canvas                           = document.getElementById('canvas-editor');     // Canvas element
+    this.m_Context                          = this.m_Canvas.getContext('2d');                // 2d canvas context
     this.m_StoryCardsArray                  = [];                           // Array of all the story cards
     this.m_CurrentlySelectedCardsIDArray    = [];                           // Array with IDs of the currently selected cards
     this.m_CurrentlyEditingCardID           = -1;                           // ID of the card that's currently open in the editor
@@ -354,9 +353,9 @@ var MakerApp = function() {
 
 
     this.Init = function() {
-        // App.AddStoryCard();
-        // App.m_StoryCardsArray[0].MoveToLocation((window.innerWidth / 2) - (App.m_StoryCardsArray[0].m_Size.x / 2), (window.innerHeight / 2) - (App.m_StoryCardsArray[0].m_Size.y / 2))
-        // App.m_StoryCardsArray[0].m_CardType = App.m_CardTypes.start;
+        App.AddStoryCard();
+        App.m_StoryCardsArray[0].MoveByOffset((App.m_Canvas.width / 2) - (App.m_StoryCardsArray[0].m_Size.x), (App.m_Canvas.height / 2) - (App.m_StoryCardsArray[0].m_Size.y / 2))
+        App.m_StoryCardsArray[0].m_CardType = App.m_CardTypes.start;
 
         var GET_variables = location.search.replace('?', '').split('&').map(function(val){
             return val.split('=');
@@ -367,8 +366,6 @@ var MakerApp = function() {
                 App.Project_ID = GET_variables[GET_count][1];
             }
         }
-
-        App.AddStoryCard();
 
         App.InitEventListeners();
 
