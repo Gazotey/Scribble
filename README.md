@@ -6,6 +6,7 @@ There currently is no export or build functionality of any kind. I do plan to im
 For every prompt of text, it shows a card. Cards have connections with other cards, which represent the choices the user can choose from.  
 
 Development on Scribble has slowed down due to a lack of time, so I'm making it available for general use.  
+Improvements are welcomed
 
 <table><tr><td>
 <img src="img/screenshot.jpg">
@@ -36,6 +37,18 @@ Development on Scribble has slowed down due to a lack of time, so I'm making it 
 <img src="img/connecting_cards.gif">
 </td></tr></table>
 
+#### Selecting multiple cards
+Multiple cards can be selected by dragging a selection or by using the shortcut (`CRTL` + `click` cards)  
+<table><tr><td>
+<img src="img/multi-selection.gif">
+</td></tr></table>
+
+#### Deleting cards
+The `delete` button deletes all currently selected cards.
+<table><tr><td>
+<img src="img/shortcut_delete.gif">
+</td></tr></table>
+
 ##### Previewing the game
 <table><tr><td>
 <img src="img/preview_mode.gif">
@@ -45,6 +58,12 @@ Development on Scribble has slowed down due to a lack of time, so I'm making it 
 I plan to implement at least these features at some point.
 - Export game to JSON
 - Load game to JSON
+
+### Missing very-nice-to-have features
+I _may_ implement some of these at some point.
+- Undo/redo in editor
+- Build JSON export as android game
+- Saving/loading projects using IndexedDB
 
 ### Technical details
 This tool has been written in plain Javascript, using JQuery for some events and for getting values from text fields.  
