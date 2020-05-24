@@ -25,7 +25,8 @@ All contributions are welcome!
 </details>
 
 
-##### Adding choices for the user
+##### Adding choices for the player
+These choices make the flow of the story.
 
 <details>
 <summary>Gif</summary>
@@ -44,6 +45,7 @@ All contributions are welcome!
 
 
 ##### Setting card types
+Make a card a `Win` card, `Game Over` card, or a `Normal` card.
 
 <details>
 <summary>Gif</summary>
@@ -54,6 +56,7 @@ All contributions are welcome!
 
 
 ##### Connecting cards
+Connecting two card creates a choice for the player on the parent card.
 
 <details>
 <summary>Gif</summary>
@@ -86,6 +89,7 @@ Pressing `delete` deletes all currently selected cards.
 
 
 ##### Previewing the game
+Using this basic preview, the flow of the game can be tested.
 
 <details>
 <summary>Gif</summary>
