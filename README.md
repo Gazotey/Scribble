@@ -16,45 +16,83 @@ All contributions are welcome!
 
 ### Features available
 ##### Editing text
-<table><tr><td>
-<img src="img/editing_cards.gif">
-</td></tr></table>
+
+<details>
+<summary>Gif</summary>
+
+![](img/editing_cards.gif)
+
+</details>
+
 
 ##### Adding choices for the user
-<table><tr><td>
-<img src="img/add_user_choice.gif">
-</td></tr></table>
 
-<table><tr><td>
-<img src="img/add_user_choice_2.gif">
-</td></tr></table>
+<details>
+<summary>Gif</summary>
+
+![](img/add_user_choice.gif)
+
+</details>
+
+
+<details>
+<summary>Gif</summary>
+
+![](img/add_user_choice_2.gif)
+
+</details>
+
 
 ##### Setting card types
-<table><tr><td>
-<img src="img/card_types.gif">
-</td></tr></table>
+
+<details>
+<summary>Gif</summary>
+
+![](img/card_types.gif)
+
+</details>
+
 
 ##### Connecting cards
-<table><tr><td>
-<img src="img/connecting_cards.gif">
-</td></tr></table>
+
+<details>
+<summary>Gif</summary>
+
+![](img/connecting_cards.gif)
+
+</details>
+
 
 #### Selecting multiple cards
 Multiple cards can be selected by dragging a selection or by using the shortcut (`CRTL` + `click` cards)  
-<table><tr><td>
-<img src="img/multi-selection.gif">
-</td></tr></table>
+
+<details>
+<summary>Gif</summary>
+
+![](img/multi-selection.gif)
+
+</details>
+
 
 #### Deleting cards
-The `delete` button deletes all currently selected cards.
-<table><tr><td>
-<img src="img/shortcut_delete.gif">
-</td></tr></table>
+Pressing `delete` deletes all currently selected cards.
+
+<details>
+<summary>Gif</summary>
+
+![](img/shortcut_delete.gif)
+
+</details>
+
 
 ##### Previewing the game
-<table><tr><td>
-<img src="img/preview_mode.gif">
-</td></tr></table>
+
+<details>
+<summary>Gif</summary>
+
+![](img/preview_mode.gif)
+
+</details>
 
 ### Missing nice-to-have features
 I _may_ implement some of these at some point.
