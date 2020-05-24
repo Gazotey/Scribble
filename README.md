@@ -56,12 +56,7 @@ The `delete` button deletes all currently selected cards.
 <img src="img/preview_mode.gif">
 </td></tr></table>
 
-### Missing essential features
-I plan to implement at least these features at some point.
-- Export game to JSON
-- Load game to JSON
-
-### Missing very-nice-to-have features
+### Missing nice-to-have features
 I _may_ implement some of these at some point.
 - Undo/redo in editor
 - Build JSON export as android game
