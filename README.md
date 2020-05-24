@@ -1,5 +1,5 @@
 # Scribble
-##### A visual tool for developing Create Your Own Adventure Games (CYOAG)
+##### A visual tool for writing Create Your Own Adventure Games (CYOAG)
 This tool can be used to write text-based games where the choices of the players affect the flow of the story. It's useful for visualizing the flow of your story.  
 There currently is no build functionality of any kind, but games can be exported to JSON (and imported) to use in your application.  
 
