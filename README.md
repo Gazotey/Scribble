@@ -88,7 +88,7 @@ Pressing `delete` deletes all currently selected cards.
 </details>
 
 
-##### Previewing the game
+#### Previewing the game
 Using this basic preview, the flow of the game can be tested.
 
 <details>
