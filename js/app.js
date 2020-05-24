@@ -29,7 +29,7 @@ var StoryCard = function() {
     }
 
     // Add slave card
-    this.AddUserChoice = function(a_IDOfExistingCard) {
+    this.AddUserChoice = function(a_IDOfExistingCard, a_ChoiceText = '') {
         var IDOfStoryCard;
         
         if(a_IDOfExistingCard == undefined) {
@@ -50,11 +50,11 @@ var StoryCard = function() {
                 }
             }
 
-            IDOfStoryCard                                                                           = a_IDOfExistingCard;
+            IDOfStoryCard = a_IDOfExistingCard;
             App.m_StoryCardsArray[App.GetStoryCardIndexByID(a_IDOfExistingCard)].m_AmountOfMasters  += 1;
         }
 
-        var newUserChoice       = new UserChoice("Placeholder", IDOfStoryCard);
+        var newUserChoice       = new UserChoice(a_ChoiceText, IDOfStoryCard);
         this.m_UserChoices.push(newUserChoice);
     }
 
@@ -737,6 +737,19 @@ var MakerApp = function() {
         }
     }
 
+    this.SaveFile = function(content, fileName, contentType) {
+        let a = document.createElement("a");
+        let file = new Blob([content], {type: contentType});
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+    }
+
+    this.GetDateTimeStamp = function() {
+        let date = new Date();
+        return date.getDate() + '-' + date.getMonth() + '-' + date.getFullYear() + '_' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    }
+
     this.BuildConfiguration = function(IsForSaving) {
         var config = {
             GameName:   App.m_GameName,
@@ -806,6 +819,48 @@ var MakerApp = function() {
         });
     }
 
+    this.ExportToJSON = function() {
+        let config = this.BuildConfiguration(true);
+        App.SaveFile(JSON.stringify(config), App.GetDateTimeStamp() + '.json', 'text/plain');
+    }
+
+    this.ImportFromJSON = function(file) {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", e => {
+            App.LoadSave(JSON.parse(reader.result));
+        });
+
+        reader.readAsText(file);
+    }
+
+    this.LoadSave = function(JSON) {
+        App.m_GameName = JSON.GameName;
+        App.ac_FontSize = JSON.FontSize;
+        App.m_StoryCardsArray.length = 0;
+
+        // Create cards from JSON data
+        for(const card of JSON.CardTree) {
+            App.AddStoryCard();
+            App.m_StoryCardsArray[App.m_StoryCardsArray.length - 1].m_StoryTextArray = card.StoryText.split(" ");
+            App.m_StoryCardsArray[App.m_StoryCardsArray.length - 1].m_Position = card.Position;
+
+            for (let [key, value] of Object.entries(App.m_CardTypes)) {
+                if(value === card.Type) {
+                    App.m_StoryCardsArray[App.m_StoryCardsArray.length - 1].m_CardType = App.m_CardTypes[key];
+                }
+            }
+        }
+
+        // Add user choices (cards need to be created at this point)
+        for(const card of JSON.CardTree) {
+            for(const userChoice of card.Choices) {
+                let cardIDToConnectTo = App.m_StoryCardsArray[userChoice.GoToIndex].m_ID;
+                App.m_StoryCardsArray[card.MyIndex].AddUserChoice(cardIDToConnectTo, userChoice.ChoiceText);
+            }
+        }
+    }
+
     this.InitEventListeners = function() {
         // Event Listeners
         $(".canvas-editor").bind('contextmenu', function(e){
@@ -867,6 +922,18 @@ var MakerApp = function() {
 
         $(".run-game").click(function() {
             App.RunGame();
+        });
+
+        $('.import-from-json').click(function() {
+            $('#json_import').click();
+        });
+
+        $('#json_import').change(function() {
+            App.ImportFromJSON($(this)[0].files[0]);
+        });
+
+        $('.export-to-json').click(function() {
+            App.ExportToJSON();
         });
 
         // When key is pressed
