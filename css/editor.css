@@ -13,39 +13,12 @@ body, html {
     overflow-x:         hidden;
 }
 
-
-/* header {
-    height:             7%;
-    width:              100%;
-    
-    background-color:   grey;
-}
-
-.header-item {
-    height:             100%;
-    float:              left;
-}
-
-.header-item:hover {
-    background-color:   white;
-}
-
-.header-item:hover > a.header-link {
-    color:              grey;
-}
-
-.header-item a {
-    padding-left:       25px;
-    padding-right:      25px;
-
-    text-decoration:    none;
-    color:              white;
-} */
-
-
-
 .navbar a {
     color:              black;
+}
+
+#json_import {
+    display:            none;
 }
 
 .navbar-brand {
