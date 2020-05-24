@@ -45,7 +45,7 @@ These choices make the flow of the story.
 
 
 ##### Setting card types
-Make a card a `Win` card, `Game Over` card, or a `Normal` card.
+Make a card a `Win`, `Game Over`, or `Normal` card.
 
 <details>
 <summary>Gif</summary>
