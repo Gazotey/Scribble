@@ -342,7 +342,9 @@ var MakerApp = function() {
         left:           false,
         right:          false,
         middle:         false
-    }
+    };
+
+    this.m_ScribbleBuilderConnection        = io('http://localhost:8181');
 
     // Editor config
     this.ec_PaddingAroundCardText           = { x: 10, y: 10 };
@@ -819,6 +821,12 @@ var MakerApp = function() {
         });
     }
 
+    this.BuildGame = function() {
+        var config = App.BuildConfiguration();
+
+        App.m_ScribbleBuilderConnection.emit('build_android', config);
+    };
+
     this.ExportToJSON = function() {
         let config = this.BuildConfiguration(true);
         App.SaveFile(JSON.stringify(config), App.GetDateTimeStamp() + '.json', 'text/plain');
@@ -922,6 +930,10 @@ var MakerApp = function() {
 
         $(".run-game").click(function() {
             App.RunGame();
+        });
+
+        $(".build-game").click(function() {
+            App.BuildGame();
         });
 
         $('.import-from-json').click(function() {
