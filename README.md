@@ -17,7 +17,7 @@ All contributions are welcome!
 ### Features available
 ##### Building as Android app
 
-Using the ![Scribble Builder](https://github.com/Gazotey/Scribble-Builder), Scribble games can be compiled to (a.t.m. very basic) Android apps.
+Using the [Scribble Builder](https://github.com/Gazotey/Scribble-Builder), Scribble games can be compiled to (a.t.m. very basic) Android apps.
 
 ##### Editing text
 
