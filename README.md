@@ -15,6 +15,10 @@ All contributions are welcome!
 </td></tr></table>
 
 ### Features available
+##### Building as Android app
+
+Using the ![Scribble Builder](https://github.com/Gazotey/Scribble-Builder), Scribble games can be compiled to (a.t.m. very basic) Android apps.
+
 ##### Editing text
 
 <details>
@@ -101,7 +105,6 @@ Using this basic preview, the flow of the game can be tested.
 ### Missing nice-to-have features
 I _may_ implement some of these at some point.
 - Undo/redo in editor
-- Build JSON export as android game
 - Saving/loading projects using IndexedDB
 
 ### Technical details
