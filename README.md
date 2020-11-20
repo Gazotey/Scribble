@@ -11,49 +11,49 @@ All contributions are welcome!
 [Demo](https://gazotey.github.io/Scribble/) (master branch)
 
 <table><tr><td>
-<img src="img/screenshot.jpg">
+<img src="resources/img/screenshot.jpg">
 </td></tr></table>
 
 ### Features available
 ##### Editing text
 <table><tr><td>
-<img src="img/editing_cards.gif">
+<img src="resources/img/editing_cards.gif">
 </td></tr></table>
 
 ##### Adding choices for the user
 <table><tr><td>
-<img src="img/add_user_choice.gif">
+<img src="resources/img/add_user_choice.gif">
 </td></tr></table>
 
 <table><tr><td>
-<img src="img/add_user_choice_2.gif">
+<img src="resources/img/add_user_choice_2.gif">
 </td></tr></table>
 
 ##### Setting card types
 <table><tr><td>
-<img src="img/card_types.gif">
+<img src="resources/img/card_types.gif">
 </td></tr></table>
 
 ##### Connecting cards
 <table><tr><td>
-<img src="img/connecting_cards.gif">
+<img src="resources/img/connecting_cards.gif">
 </td></tr></table>
 
 #### Selecting multiple cards
 Multiple cards can be selected by dragging a selection or by using the shortcut (`CRTL` + `click` cards)  
 <table><tr><td>
-<img src="img/multi-selection.gif">
+<img src="resources/img/multi-selection.gif">
 </td></tr></table>
 
 #### Deleting cards
 The `delete` button deletes all currently selected cards.
 <table><tr><td>
-<img src="img/shortcut_delete.gif">
+<img src="resources/img/shortcut_delete.gif">
 </td></tr></table>
 
 ##### Previewing the game
 <table><tr><td>
-<img src="img/preview_mode.gif">
+<img src="resources/img/preview_mode.gif">
 </td></tr></table>
 
 ### Missing nice-to-have features
