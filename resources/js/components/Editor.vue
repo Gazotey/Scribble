@@ -6,7 +6,7 @@
 
 import Vector2 from "../editor/Vector2";
 import TextCard from "../editor/render_objects/TextCard";
-import ZoomHelper from "../editor/ZoomHelper";
+import Background from "../editor/render_objects/background";
 
 export default {
     name: 'editor',
@@ -14,18 +14,19 @@ export default {
         return {}
     },
     mounted() {
-        new ZoomHelper();
         const script = (p5) => {
             let viewZoom = 1;
             let viewPosition = new Vector2(0, 0);
             let dragOffset = new Vector2(0, 0);
             let textCards = [];
+            let backGround = null;
 
             p5.setup = () => {
                 let canvasParent = this.$refs.canvasParent;
                 let canvas = p5.createCanvas(canvasParent.clientWidth, canvasParent.clientHeight);
                 canvas.parent("p5Canvas");
                 canvas.mouseWheel(onScroll);
+                backGround = new Background();
 
                 textCards.push(
                     new TextCard(
@@ -61,7 +62,14 @@ export default {
 
                 textCards.forEach((textCard) => {
                     textCard.Render(p5, viewZoom, viewPosition);
+                    // textCard.Render(p5, 1, viewPosition);
                 });
+
+                // p5.text(
+                //     '(' + Math.round(p5.mouseX) + ', ' + Math.round(p5.mouseY) + ')',
+                //     200,
+                //     300
+                // );
             }
 
             // Keep p5 canvas full width and height
@@ -77,16 +85,16 @@ export default {
                         textCard.dragLock = true;
                         cardClicked = true;
 
-                        dragOffset.x = p5.mouseX - textCard.x;
-                        dragOffset.y = p5.mouseY - textCard.y;
+                        dragOffset.x = (textCard.x * viewZoom) - p5.mouseX;
+                        dragOffset.y = (textCard.y * viewZoom) - p5.mouseY;
                     } else {
                         textCard.dragLock = false;
                     }
                 });
 
                 if(!cardClicked) {
-                    dragOffset.x = p5.mouseX - viewPosition.x;
-                    dragOffset.y = p5.mouseY - viewPosition.y;
+                    dragOffset.x = (viewPosition.x * viewZoom) - p5.mouseX;
+                    dragOffset.y = (viewPosition.y * viewZoom) - p5.mouseY;
                 }
             }
 
@@ -97,14 +105,14 @@ export default {
                     if(textCard.dragLock) {
                         viewDragged = false;
 
-                        textCard.x = p5.mouseX - dragOffset.x;
-                        textCard.y = p5.mouseY - dragOffset.y;
+                        textCard.x = (p5.mouseX + dragOffset.x) / viewZoom;
+                        textCard.y = (p5.mouseY + dragOffset.y) / viewZoom;
                     }
                 });
 
                 if(viewDragged) {
-                    viewPosition.x = p5.mouseX - dragOffset.x;
-                    viewPosition.y = p5.mouseY - dragOffset.y;
+                    viewPosition.x = (p5.mouseX + dragOffset.x) / viewZoom;
+                    viewPosition.y = (p5.mouseY + dragOffset.y) / viewZoom;
                 }
             }
 
@@ -118,15 +126,21 @@ export default {
 
             let onScroll = (event) => {
                 if (event.deltaY > 0) {
-                    viewZoom -= 0.2;
+                    if(viewZoom > 0.3) {
+                        console.log(viewZoom);
+                        viewZoom -= 0.2;
+                        console.log(viewZoom);
+                    }
                 } else {
-                    viewZoom += 0.2;
+                    if(viewZoom < 2.8) {
+                        viewZoom += 0.2;
+                    }
                 }
             }
         }
 
         const P5 = require('p5');
-        new P5(script)
+        window.editor = new P5(script);
     }
 }
 </script>

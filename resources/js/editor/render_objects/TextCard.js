@@ -6,10 +6,12 @@ class TextCard {
         this.height = height;
         this.innerPadding = 10;
 
-        this.backgroundColour = [255, 255, 255];
+        this.primaryBGColour = [255, 255, 255];
+        this.secondaryBGColour = [225, 225, 225];
 
         this.borderWidth = 1;
-        this.borderColour = [0, 0, 0];
+        this.primaryBorderColour = [0, 0, 0];
+        this.secondaryBorderColour = [0, 0, 0];
 
         this.textColour = [0, 0, 0];
         this.textSize = 12;
@@ -34,7 +36,20 @@ class TextCard {
     Render(p5, viewScale, viewPosition) {
         p5.push();
 
-        p5.fill(this.borderColour[0], this.borderColour[1], this.borderColour[2]);
+        if(this.mouseHovers) {
+            p5.fill(
+                this.secondaryBorderColour[0],
+                this.secondaryBorderColour[1],
+                this.secondaryBorderColour[2]
+            );
+        } else {
+            p5.fill(
+                this.primaryBorderColour[0],
+                this.primaryBorderColour[1],
+                this.primaryBorderColour[2]
+            );
+        }
+
         p5.rect(
             (viewPosition.x + this.x) * viewScale,
             (this.y + viewPosition.y) * viewScale,
@@ -42,7 +57,20 @@ class TextCard {
             this.height * viewScale
         );
 
-        p5.fill(this.backgroundColour[0], this.backgroundColour[1], this.backgroundColour[2]);
+        if(this.mouseHovers) {
+            p5.fill(
+                this.secondaryBGColour[0],
+                this.secondaryBGColour[1],
+                this.secondaryBGColour[2]
+            );
+        } else {
+            p5.fill(
+                this.primaryBGColour[0],
+                this.primaryBGColour[1],
+                this.primaryBGColour[2]
+            );
+        }
+
         p5.rect(
             (viewPosition.x + this.x + this.borderWidth) * viewScale,
             (viewPosition.y + this.y + this.borderWidth) * viewScale,
